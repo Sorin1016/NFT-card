@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap");
+
+:root {
+   /* Primary color */
+   --soft-blue: hsl(215, 51%, 70%);
+   --cyan: hsl(178, 100%, 50%);
+
+   /* Neutral */
+   --main-background: hsl(217, 54%, 11%);
+   --card-background: hsl(216, 50%, 16%);
+   --hr-color: hsl(215, 32%, 27%);
+   --white: hsl(0, 0%, 100%);
+   --hover-image: hsla(178, 100%, 50%, 0.5);
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Outfit", sans-serif;
+   font-size: 11px;
+   background-color: var(--main-background);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   height: 100vh;
+}
+
+.container {
+   background-color: var(--card-background);
+   margin: 0 auto;
+   padding: 1rem;
+   width: 250px;
+   border-radius: 1rem;
+   box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.container > .main-image > img {
+   width: 100%;
+   border-radius: 0.5rem;
+}
+
+h2 {
+   color: var(--white);
+   font-weight: 700;
+   text-align: left;
+   padding: 1rem 0;
+}
+
+.text-container {
+   display: flex;
+   justify-content: space-between;
+}
+
+.left-text,
+.right-text {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 0.3rem;
+   margin-top: 0.8rem;
+}
+
+.left-icon {
+   width: 8px;
+}
+
+.right-icon {
+   width: 15px;
+}
+
+hr {
+   background-color: var(--hr-color);
+   border: none;
+   height: 0.2px;
+   margin: 0.8rem 0;
+}
+
+.footer {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+   gap: 0.6rem;
+}
+
+.footer > img {
+   width: 30px;
+   border: 1px solid var(--white);
+   border-radius: 50%;
+}
+
+p {
+   color: var(--soft-blue);
+   line-height: 1.5em;
+   font-weight: 400;
+}
+
+.left-paragraf > p {
+   color: var(--cyan);
+}
+
+a {
+   color: var(--white);
+   text-decoration: none;
+   cursor: pointer;
+}
+
+a:hover {
+   color: var(--cyan);
+}
+
+.main-image {
+   position: relative;
+}
+
+.hover-image {
+   position: absolute;
+   background-color: var(--hover-image);
+   border-radius: 0.5rem;
+   z-index: -1;
+   width: 100%;
+   height: 97%;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.main-image:hover {
+   .hover-image {
+      z-index: 1;
+      cursor: pointer;
+   }
+}
+
+.attribution {
+   color: white;
+   font-weight: 300;
+   font-size: 12px;
+   margin-top: 2rem;
+}
+
+.attribution > a {
+   font-weight: 700;
+}
+
+@media screen and (max-width: 200px) {
+   .text-container {
+      flex-direction: column;
+   }
+}
